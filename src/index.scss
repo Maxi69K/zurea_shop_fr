@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 50px;
+  user-select: none;
+  scroll-behavior: smooth;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+@import 'assets/scss//nav.scss';
+@import 'assets/scss/login.scss';
+@import 'assets/scss/shop-page.scss';
+@import 'assets/scss/footer.scss';
+@import 'assets/scss/error.scss';
+@import 'assets/scss/loader.scss';
+@import 'assets/scss/modal.scss';
+@import 'assets/scss/cookieNotice.scss';

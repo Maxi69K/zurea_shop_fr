@@ -1,0 +1,14 @@
+.cookie-notice-wrapper {
+    position: absolute;
+    top: 40vh;
+    left: 50vw;
+    transform: translate(-50%);
+    max-width: 400px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, .8);
+    a{
+        text-decoration: none;
+    }
+}
