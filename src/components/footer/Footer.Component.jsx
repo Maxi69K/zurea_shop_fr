@@ -1,14 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
 
 const FooterComponent = () => {
   return (
     <footer className="my-footer">
       <small>
         &copy; 2023 Zurea Shop by
-        <Link target="_blank" rel="noopener noreferrer" href="https://webdevelopermaxi.eu.org">
+        <a target="_blank" rel="noopener noreferrer" href="https://webdevelopermaxi.eu.org">
           <span> Maxi </span>
-        </Link>
+        </a>
         . All Rights Reserved.
       </small>
     </footer>
