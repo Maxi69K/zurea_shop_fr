@@ -16,22 +16,23 @@ const PaymentPageComponent = () => {
     let cur = 'usd';
     const stripeOption = {clientSecret: clientKey};
 
-    useEffect(() => {
-      console.log(clientKey);
-    }, [clientKey]);
+    // useEffect(() => {
+    //   console.log(clientKey);
+    // }, [clientKey]);
 
     useEffect(() => {
-        console.log(totalPrice);
-        totalPrice && ShopService.initPayment({amount: totalPrice, currency: cur})
-            .then((response) => {
-                console.log(response);
-                setClientKey(response.data.client_secret);
-            })
-            .catch((error) => {
-                console.log(error);
-                toast.error('Error on init payment. Please try later.')
-            });
-    }, [totalPrice]);
+      console.log(totalPrice);
+      totalPrice &&
+        ShopService.initPayment({ amount: totalPrice, currency: cur })
+          .then((response) => {
+            console.log(response);
+            setClientKey(response.data.client_secret);
+          })
+          .catch((error) => {
+            console.log(error);
+            toast.error('Error on init payment. Please try later.');
+          });
+    }, [totalPrice, cur]);
 
   return (
     <>

@@ -12,25 +12,24 @@ const UserProductPageComponent = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-
       dispatch(toggleLoader(true));
 
-        //console.log('User--->', user);
-        UserProducts(user._id)
-            .then(res => {
-                //console.log(res.data);
-                setProducts(res.data);
-                // setTimeout(() => {
-                //   dispatch(toggleLoader(false));
-                // },2000)
-              })
-              .catch((err) => {
-                console.log(err);
-              })
-              .finally(() => {
-                dispatch(toggleLoader(false));
-              })
-    }, []);
+      //console.log('User--->', user);
+      UserProducts(user._id)
+        .then((res) => {
+          //console.log(res.data);
+          setProducts(res.data);
+          // setTimeout(() => {
+          //   dispatch(toggleLoader(false));
+          // },2000)
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          dispatch(toggleLoader(false));
+        });
+    }, [dispatch, user._id]);
 
     const renderProducts = () => {
         return products.map((item) => <ProductListItemComponent key={item._id} item={item} isEditMode={true} />);

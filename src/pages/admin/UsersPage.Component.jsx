@@ -30,12 +30,12 @@ const UsersPageComponent = () => {
 //TODO: add pagination
   useEffect(() => {
     apiGetUsersResponse.refetch();
-  }, []);
+  }, [apiGetUsersResponse]);
 
   useEffect(() => {
     dispatch(toggleLoader(apiGetUsersResponse.isLoading));
     apiGetUsersResponse.refetch();
-  }, [apiGetUsersResponse.isLoading]);
+  }, [apiGetUsersResponse.isLoading, apiGetUsersResponse, dispatch]);
 
   // useEffect(() => {
   //     dispatch(toggleLoader(true));

@@ -50,7 +50,7 @@ const AdminPageComponent = () => {
                   >
                     <img
                       src="https://github.com/mdo.png"
-                      alt="Picture"
+                      alt="GitHub"
                       width="32"
                       height="32"
                       className="rounded-circle me-2"

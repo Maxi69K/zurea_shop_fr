@@ -11,12 +11,11 @@ const TopTwoProductsComponent = () => {
     useEffect(() => {
       dispatch(toggleLoader(true));
 
-        GetTopTwoProducts()
-            .then((res) => {
-                setProducts(res.data);
-                dispatch(toggleLoader(false));
-            })
-    }, []);
+      GetTopTwoProducts().then((res) => {
+        setProducts(res.data);
+        dispatch(toggleLoader(false));
+      });
+    }, [dispatch]);
 
     const renderProducts = () => {
         return products.map((product) => {

@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as Yup from 'yup';
 import { CreateProduct, GetProduct, UpdateProduct } from '../../services/product.service';
@@ -18,34 +18,30 @@ const ProductCreateFormComponent = () => {
   const { productId } = useParams();
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  // useEffect(() => {
     //console.log('Product state-->', product);
-  }, [product]);
+  // }, [product]);
 
   useEffect(() => {
-    //console.log('img string--->', imgString);
-    //console.log('User--->', user?._id);
-    //console.log('ProductId--->', productId);
+    const getEditProduct = () => {
+      dispatch(toggleLoader(true));
+
+      GetProduct(productId)
+        .then((response) => {
+          //console.log(response.data);
+          setProduct(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+          setErrorMsg(error.response.data);
+        })
+        .finally(() => {
+          dispatch(toggleLoader(false));
+        });
+    };
 
     productId && getEditProduct();
-  }, [productId]);
-
-  const getEditProduct = () => {
-    dispatch(toggleLoader(true));
-
-    GetProduct(productId)
-      .then((response) => {
-        //console.log(response.data);
-        setProduct(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-        setErrorMsg(error.response.data);
-      })
-      .finally(() => {
-        dispatch(toggleLoader(false));
-      });
-  };
+  }, [productId, dispatch]);
 
   const formik = useFormik({
     initialValues: product,
@@ -196,7 +192,7 @@ const ProductCreateFormComponent = () => {
           <div className="mb-3 text-center">
             <img
               src={imgString || product.imgUrl || 'https://source.unsplash.com/hyGXlmNeK-I'}
-              alt="Product Image"
+              alt="Product"
               className="img-thumbnail img-fluid"
             />
           </div>

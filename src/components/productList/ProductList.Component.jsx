@@ -48,10 +48,9 @@ const ProductListComponent = () => {
         })
         .finally(() => {
           dispatch(toggleLoader(false));
-        })
+        });
     }
-    
-  }, [params])
+  }, [params, dispatch]);
 
   //  useEffect(() => {
   //    console.log('queryParams...', queryParams.get('search')); // for query params

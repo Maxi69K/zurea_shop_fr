@@ -27,7 +27,7 @@ const ActivationAccountPageComponent = () => {
             toast.error('Not valid user for activation.');
             navigate('/');
         }
-    }, [userId]);
+    }, [userId, navigate]);
 
   return (
     <div className="d-flex justify-content-center align-content-center flex-column text-center p-3">
