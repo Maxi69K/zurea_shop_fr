@@ -12,7 +12,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // axios.defaults.baseURL = 'http://localhost:5050/api';
-axios.defaults.baseURL = 'https://zurea-backend.netlify.app/api';
+axios.defaults.baseURL = 'https://zurea-shop-backend.onrender.com/';
 
 axios.interceptors.request.use((config) => {// TOKEN ************************************
   //console.log('Axios Interceptor--->', config);
