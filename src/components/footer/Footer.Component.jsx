@@ -5,7 +5,7 @@ const FooterComponent = () => {
     <footer className="my-footer">
       <small>
         &copy; 2023 Zurea Shop by
-        <a target="noreferrer" href="https://webdizajnmaxi.eu.org">
+        <a target="noreferrer" href="https://webdevelopermaxi.eu.org">
           <span> Maxi </span>
         </a>
         . All Rights Reserved.
